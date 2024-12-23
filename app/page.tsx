@@ -5,11 +5,14 @@ import L, { Map } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import clsx from "clsx";
 
+const NUMBER_OF_GUESSES = 5;
+
 export default function Home() {
   const mapId = useId();
   const map = useRef<Map>(null);
   const [answer, setAnswer] = useState<string>();
   const [guesses, setGuesses] = useState<string[]>([]);
+  const gameOver = guesses.length === NUMBER_OF_GUESSES;
 
   const routesHashmap = routes.features.reduce((acc, feature) => {
     const routeName = feature.properties.route_name;
@@ -25,7 +28,6 @@ export default function Home() {
       };
     }
   }, {});
-  console.log(routesHashmap);
 
   useEffect(() => {
     // Initialize map
@@ -56,12 +58,18 @@ export default function Home() {
     );
   }, []);
 
+  useEffect(() => {
+    if (gameOver) {
+      alert(`The correct answer was ${answer}`);
+    }
+  }, [gameOver]);
+
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
       <h1 className={clsx("text-center")}>Routle</h1>
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       <div className={clsx(["flex", "flex-col", "gap-2", "p-2"])}>
-        {new Array(5).fill(0).map((value, index) => {
+        {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
           return (
             <div key={index} className={clsx(["min-h-10"])}>
@@ -86,7 +94,7 @@ export default function Home() {
       </div>
       <div className={clsx(["flex", "gap-2", "overflow-scroll"])}>
         {Object.entries(routesHashmap).map(([name, features]) => {
-          const disabled = guesses.includes(name);
+          const disabled = guesses.includes(name) || gameOver;
           return (
             <button
               disabled={disabled}
@@ -109,14 +117,12 @@ export default function Home() {
               key={name}
               onClick={() => {
                 setGuesses([...guesses, name]);
+
                 if (name === answer) {
                   alert("wow correct");
                   return;
                 }
-                if (guesses.length > 4) {
-                  alert("You are done!");
-                  return;
-                }
+
                 // Add guess to map
                 features.forEach((feature) =>
                   L.geoJSON(feature, { style: { color: "#005695" } })
