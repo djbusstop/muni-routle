@@ -1,15 +1,34 @@
 "use client";
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import routes from "./muni_simple_routes.json";
 import L, { Map } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import clsx from "clsx";
 
 export default function Home() {
-  const map = useRef<Map>(null);
   const mapId = useId();
+  const map = useRef<Map>(null);
+  const [answer, setAnswer] = useState<string>();
+  const [guesses, setGuesses] = useState<string[]>([]);
+
+  const routesHashmap = routes.features.reduce((acc, feature) => {
+    const routeName = feature.properties.route_name;
+    if (routeName in acc) {
+      return {
+        ...acc,
+        [routeName]: [...acc[routeName], feature],
+      };
+    } else {
+      return {
+        ...acc,
+        [routeName]: [feature],
+      };
+    }
+  }, {});
+  console.log(routesHashmap);
 
   useEffect(() => {
+    // Initialize map
     map.current = L.map(mapId, {
       zoomSnap: 0.1,
       zoom: 11.6,
@@ -23,31 +42,94 @@ export default function Home() {
       boxZoom: false,
       doubleClickZoom: false,
     });
-    const routesHashmap = routes.features.reduce(
-      (acc: Record<string, unknown[]>, feature) => {
-        const routeName = feature.properties.route_name;
-        if (routeName in acc) {
-          return {
-            ...acc,
-            [routeName]: [...acc[routeName], feature],
-          };
-        } else {
-          return {
-            ...acc,
-            [routeName]: [feature],
-          };
-        }
-      },
-      {}
+
+    // Pick a random route as the answer
+    const random = Math.floor(
+      Math.random() * Object.keys(routesHashmap).length
     );
-    console.log(routesHashmap);
+    const [name, features] = Object.entries(routesHashmap).at(random);
+    setAnswer(name);
+
+    // Add random route to map
+    features.forEach((feature: unknown) =>
+      L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
+    );
   }, []);
 
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
-      <h1>Muni lines quiz</h1>
-      <div className={clsx(["w-full", "flex-grow", "bg-black"])} id={mapId} />
-      <h2>Pick</h2>
+      <h1 className={clsx("text-center")}>Routle</h1>
+      <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
+      <div className={clsx(["flex", "flex-col", "gap-2", "p-2"])}>
+        {new Array(5).fill(0).map((value, index) => {
+          const guess = guesses.at(index);
+          return (
+            <div key={index} className={clsx(["min-h-10"])}>
+              <div
+                className={clsx([
+                  "bg-gray-800",
+                  "min-h-6",
+                  "h-full",
+                  "w-full",
+                  "rounded",
+                  "flex",
+                  "items-center",
+                  "p-2",
+                  "font-bold",
+                ])}
+              >
+                {guess}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className={clsx(["flex", "gap-2", "overflow-scroll"])}>
+        {Object.entries(routesHashmap).map(([name, features]) => {
+          const disabled = guesses.includes(name);
+          return (
+            <button
+              disabled={disabled}
+              className={clsx([
+                "font-semibold",
+                "bg-transparent",
+                "py-2",
+                "px-4",
+                "rounded",
+                "border",
+                disabled
+                  ? ["border-gray-600", "text-gray-600"]
+                  : [
+                      "hover:bg-gray-800",
+                      "text-gray-300",
+                      "hover:text-white",
+                      "border-gray-300",
+                    ],
+              ])}
+              key={name}
+              onClick={() => {
+                setGuesses([...guesses, name]);
+                if (name === answer) {
+                  alert("wow correct");
+                  return;
+                }
+                if (guesses.length > 4) {
+                  alert("You are done!");
+                  return;
+                }
+                // Add guess to map
+                features.forEach((feature) =>
+                  L.geoJSON(feature, { style: { color: "#005695" } })
+                    .addTo(map.current)
+                    .bringToBack()
+                );
+              }}
+            >
+              {name}
+            </button>
+          );
+        })}
+      </div>
     </main>
   );
 }
