@@ -4,6 +4,7 @@ import routes from "./muni_simple_routes.json";
 import L, { Map } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import clsx from "clsx";
+import { Feature } from "geojson";
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -12,22 +13,30 @@ export default function Home() {
   const map = useRef<Map>(null);
   const [answer, setAnswer] = useState<string>();
   const [guesses, setGuesses] = useState<string[]>([]);
-  const gameOver = guesses.length === NUMBER_OF_GUESSES;
+  const gameOver = Boolean(
+    // Ran out of guesses
+    guesses.length === NUMBER_OF_GUESSES ||
+      // Solved the quiz
+      (answer && guesses.includes(answer))
+  );
 
-  const routesHashmap = routes.features.reduce((acc, feature) => {
-    const routeName = feature.properties.route_name;
-    if (routeName in acc) {
-      return {
-        ...acc,
-        [routeName]: [...acc[routeName], feature],
-      };
-    } else {
-      return {
-        ...acc,
-        [routeName]: [feature],
-      };
-    }
-  }, {});
+  const routesHashmap = routes.features.reduce(
+    (acc: Record<string, Feature[]>, feature) => {
+      const routeName = feature.properties.route_name;
+      if (routeName in acc) {
+        return {
+          ...acc,
+          [routeName]: [...acc[routeName], feature as Feature],
+        };
+      } else {
+        return {
+          ...acc,
+          [routeName]: [feature as Feature],
+        };
+      }
+    },
+    {}
+  );
 
   useEffect(() => {
     // Initialize map
@@ -49,24 +58,20 @@ export default function Home() {
     const random = Math.floor(
       Math.random() * Object.keys(routesHashmap).length
     );
-    const [name, features] = Object.entries(routesHashmap).at(random);
+    const [name, features] = Object.entries(routesHashmap)[random];
     setAnswer(name);
 
     // Add random route to map
-    features.forEach((feature: unknown) =>
-      L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
+    features.forEach(
+      (feature) =>
+        map.current &&
+        L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
     );
   }, []);
 
-  useEffect(() => {
-    if (gameOver) {
-      alert(`The correct answer was ${answer}`);
-    }
-  }, [gameOver]);
-
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
-      <h1 className={clsx("text-center")}>Routle</h1>
+      <h1 className={clsx("text-center")}>ROUTLE</h1>
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       <div className={clsx(["flex", "flex-col", "gap-2", "p-2"])}>
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
@@ -123,11 +128,18 @@ export default function Home() {
                   return;
                 }
 
+                if (guesses.length === NUMBER_OF_GUESSES - 1) {
+                  alert(`Correct answer was ${answer}`);
+                  return;
+                }
+
                 // Add guess to map
-                features.forEach((feature) =>
-                  L.geoJSON(feature, { style: { color: "#005695" } })
-                    .addTo(map.current)
-                    .bringToBack()
+                features.forEach(
+                  (feature) =>
+                    map.current &&
+                    L.geoJSON(feature, { style: { color: "#005695" } })
+                      .addTo(map.current)
+                      .bringToBack()
                 );
               }}
             >
