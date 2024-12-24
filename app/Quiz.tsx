@@ -90,6 +90,8 @@ export default function Quiz() {
           "items-center",
           "font-bold",
           "gap-1",
+          "bg-gray-200",
+          "dark:bg-gray-800",
         ])}
       >
         <Image priority alt="Muni" src={worm} width={60} />
