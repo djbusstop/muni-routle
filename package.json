@@ -14,7 +14,8 @@
     "leaflet": "^1.9.4",
     "next": "15.1.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "seedrandom": "^3.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -23,6 +24,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/seedrandom": "^3.0.8",
     "eslint": "^9",
     "eslint-config-next": "15.1.2",
     "postcss": "^8",

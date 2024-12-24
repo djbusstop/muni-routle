@@ -3,6 +3,10 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import seedrandom from "seedrandom";
 import { GeoJSON } from "geojson";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -11,6 +15,12 @@ import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
 import worm from "./worm.svg";
 import routesHashmap from "./routesHashmap";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+// Seeded random number generator using date as seed
+const rng = seedrandom(dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD"));
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -45,9 +55,7 @@ export default function Quiz() {
       map.current.fitBounds(L.geoJSON(routes as GeoJSON).getBounds());
 
       // Pick a random route as the answer
-      const random = Math.floor(
-        Math.random() * Object.keys(routesHashmap).length
-      );
+      const random = Math.floor(rng() * Object.keys(routesHashmap).length);
       const [name, features] = Object.entries(routesHashmap)[random];
       setAnswer(name);
 
