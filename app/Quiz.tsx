@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
 import L from "leaflet";
@@ -80,22 +81,29 @@ export default function Quiz() {
       <div className={clsx(["flex", "flex-col", "gap-2", "p-2"])}>
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
+          console.log(guess);
           return (
             <div key={index} className={clsx(["min-h-10"])}>
               <div
                 className={clsx([
                   "bg-gray-800",
                   "min-h-6",
+                  "p-2",
                   "h-full",
                   "w-full",
                   "rounded",
                   "flex",
                   "items-center",
-                  "p-2",
+                  "justify-between",
                   "font-bold",
                 ])}
               >
-                {guess}
+                {guess && (
+                  <>
+                    <span>{guess}</span>
+                    <span>{guess === answer ? "✅" : "❌"}</span>
+                  </>
+                )}
               </div>
             </div>
           );
