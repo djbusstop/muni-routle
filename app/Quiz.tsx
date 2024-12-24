@@ -56,8 +56,8 @@ export default function Quiz() {
 
       // Pick a random route as the answer
       const random = Math.floor(rng() * routesList.length);
-      const { name, features } = routesList[random];
-      setAnswer(name);
+      const { route, features } = routesList[random];
+      setAnswer(route);
 
       // Add answer route to map
       features.forEach(
@@ -73,19 +73,21 @@ export default function Quiz() {
 
   useEffect(() => {
     // Add guesses to map
-    guesses.forEach((guess) => {
-      const features = routesHashmap[guess];
-      features.forEach(
-        (feature) =>
-          map.current &&
-          L.geoJSON(feature, {
-            style: { color: "#005695" },
-            interactive: false,
-          })
-            .addTo(map.current)
-            .bringToBack()
-      );
-    });
+    guesses
+      .filter((guess) => guess !== answer)
+      .forEach((guess) => {
+        const features = routesHashmap[guess];
+        features.forEach(
+          (feature) =>
+            map.current &&
+            L.geoJSON(feature, {
+              style: { color: "#005695" },
+              interactive: false,
+            })
+              .addTo(map.current)
+              .bringToBack()
+        );
+      });
   }, [guesses]);
 
   return (
@@ -175,7 +177,13 @@ export default function Quiz() {
               onClick={() => {
                 addGuess(route);
                 if (guesses.length + 1 === NUMBER_OF_GUESSES) {
-                  alert(`Correct answer was ${answer}`);
+                  alert(
+                    `You ran out of guesses. The correct answer is ${answer}.`
+                  );
+                  return;
+                }
+                if (route === answer) {
+                  alert(`Correct! The answer is ${answer}.`);
                   return;
                 }
               }}
