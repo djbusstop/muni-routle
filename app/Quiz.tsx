@@ -109,13 +109,38 @@ export default function Quiz() {
       </h1>
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
+      {/* Guesses */}
+      <div
+        className={clsx(["w-full", "flex", "gap-2", "justify-between", "px-6"])}
+      >
+        {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
+          const guess = guesses.at(index);
+          return (
+            <div
+              className={clsx([
+                "rounded",
+                "bg-gray-300",
+                "min-h-8",
+                "min-w-8",
+                "flex",
+                "items-center",
+                "justify-center",
+              ])}
+              key={index}
+            >
+              {guess && <>{guess === answer ? "✅" : "❌"}</>}
+            </div>
+          );
+        })}
+      </div>
       {/* Options */}
       <div
         className={clsx([
+          "mt-2",
           "flex",
           "flex-col",
           "overflow-scroll",
-          "max-h-[200px]",
+          "max-h-[180px]",
           "border-t",
           "border-gray-700",
           "dark:border-gray-300",
