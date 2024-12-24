@@ -71,7 +71,10 @@ export default function Quiz() {
       features.forEach(
         (feature) =>
           map.current &&
-          L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
+          L.geoJSON(feature, {
+            style: { color: "#bf2b45" },
+            interactive: false,
+          }).addTo(map.current)
       );
     }
   }, []);
@@ -164,7 +167,10 @@ export default function Quiz() {
                 features.forEach(
                   (feature) =>
                     map.current &&
-                    L.geoJSON(feature, { style: { color: "#005695" } })
+                    L.geoJSON(feature, {
+                      style: { color: "#005695" },
+                      interactive: false,
+                    })
                       .addTo(map.current)
                       .bringToBack()
                 );
