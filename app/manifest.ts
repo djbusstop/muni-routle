@@ -6,6 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     short_name: "Routle",
     description: "Test your knowledge of SF Muni routes",
     start_url: "/",
+    theme_color: "#e5e7eb",
     display: "standalone",
     icons: [
       {
