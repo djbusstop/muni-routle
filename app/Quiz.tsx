@@ -140,7 +140,7 @@ export default function Quiz() {
                       "hover:bg-gray-100",
                       "hover:text-black",
                       "dark:text-gray-300",
-                      "dark:hover:bg-gray-800",
+                      "dark:hover:bg-gray-900",
                       "dark:hover:text-white",
                     ],
               ])}
