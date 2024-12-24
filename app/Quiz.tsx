@@ -46,7 +46,7 @@ export default function Quiz() {
       // Initialize map
       map.current = L.map(mapId, {
         zoomSnap: 0.1,
-        zoom: 11.6,
+        zoom: 11.2,
         center: { lat: 37.7573, lng: -122.443985 },
         attributionControl: false,
         dragging: false,
