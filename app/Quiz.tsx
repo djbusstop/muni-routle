@@ -137,11 +137,11 @@ export default function Quiz() {
                   ? ["text-gray-300", "dark:text-gray-600"]
                   : [
                       "text-gray-700",
-                      "hover:bg-gray-100",
-                      "hover:text-black",
+                      "active:bg-gray-100",
+                      "active:text-black",
                       "dark:text-gray-300",
-                      "dark:hover:bg-gray-900",
-                      "dark:hover:text-white",
+                      "dark:active:bg-gray-900",
+                      "dark:active:text-white",
                     ],
               ])}
               key={name}
