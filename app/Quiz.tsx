@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
-import L, { Map } from "leaflet";
+import L from "leaflet";
 import { Feature } from "geojson";
 
 import routes from "./muni_simple_routes.json";
@@ -11,7 +11,8 @@ const NUMBER_OF_GUESSES = 5;
 
 export default function Quiz() {
   const mapId = useId();
-  const map = useRef<Map>(null);
+  const map = useRef<L.Map>(null);
+
   const [answer, setAnswer] = useState<string>();
   const [guesses, setGuesses] = useState<string[]>([]);
   const gameOver = Boolean(
@@ -40,37 +41,36 @@ export default function Quiz() {
   );
 
   useEffect(() => {
-    // Initialize map
-    map.current =
-      map.current === null
-        ? L.map(mapId, {
-            zoomSnap: 0.1,
-            zoom: 11.6,
-            center: { lat: 37.7573, lng: -122.443985 },
-            attributionControl: false,
-            dragging: false,
-            keyboard: false,
-            zoomControl: false,
-            scrollWheelZoom: false,
-            touchZoom: false,
-            boxZoom: false,
-            doubleClickZoom: false,
-          })
-        : null;
+    if (!map.current) {
+      // Initialize map
+      map.current = L.map(mapId, {
+        zoomSnap: 0.1,
+        zoom: 11.6,
+        center: { lat: 37.7573, lng: -122.443985 },
+        attributionControl: false,
+        dragging: false,
+        keyboard: false,
+        zoomControl: false,
+        scrollWheelZoom: false,
+        touchZoom: false,
+        boxZoom: false,
+        doubleClickZoom: false,
+      });
 
-    // Pick a random route as the answer
-    const random = Math.floor(
-      Math.random() * Object.keys(routesHashmap).length
-    );
-    const [name, features] = Object.entries(routesHashmap)[random];
-    setAnswer(name);
+      // Pick a random route as the answer
+      const random = Math.floor(
+        Math.random() * Object.keys(routesHashmap).length
+      );
+      const [name, features] = Object.entries(routesHashmap)[random];
+      setAnswer(name);
 
-    // Add random route to map
-    features.forEach(
-      (feature) =>
-        map.current &&
-        L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
-    );
+      // Add random route to map
+      features.forEach(
+        (feature) =>
+          map.current &&
+          L.geoJSON(feature, { style: { color: "#bf2b45" } }).addTo(map.current)
+      );
+    }
   }, []);
 
   return (
