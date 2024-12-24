@@ -11,10 +11,10 @@ import { GeoJSON } from "geojson";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
+import routesList, { routesHashmap } from "./routesList";
 import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
 import worm from "./worm.svg";
-import routesList, { routesHashmap } from "./routesList";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -177,18 +177,22 @@ export default function Quiz() {
               onClick={() => {
                 addGuess(route);
                 if (guesses.length + 1 === NUMBER_OF_GUESSES) {
+                  const answerName =
+                    answer &&
+                    routesHashmap[answer].at(0)?.properties?.route_title;
                   alert(
-                    `You ran out of guesses. The correct answer is ${answer}.`
+                    `You ran out of guesses. The correct answer is ${answer} ${answerName}.`
                   );
                   return;
                 }
                 if (route === answer) {
-                  alert(`Correct! The answer is ${answer}.`);
+                  alert(`Correct! The answer is ${answer} ${name}.`);
                   return;
                 }
               }}
             >
-              {route} {name}
+              {route} {name}{" "}
+              {guesses.includes(route) && <>{route === answer ? "✅" : "❌"}</>}
             </button>
           );
         })}
