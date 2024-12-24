@@ -18,8 +18,6 @@ export default function Quiz() {
   const map = useRef<L.Map>(null);
   const { guesses, addGuess } = useGuesses();
 
-  console.log(guesses);
-
   const [answer, setAnswer] = useState<string>();
   const gameOver = Boolean(
     // Ran out of guesses
