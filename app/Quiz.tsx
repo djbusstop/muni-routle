@@ -120,6 +120,7 @@ export default function Quiz() {
               className={clsx([
                 "rounded",
                 "bg-gray-300",
+                "dark:bg-gray-800",
                 "min-h-8",
                 "min-w-8",
                 "flex",
