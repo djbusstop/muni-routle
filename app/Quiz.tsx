@@ -56,10 +56,10 @@ export default function Quiz() {
 
       // Pick a random route as the answer
       const random = Math.floor(rng() * Object.keys(routesHashmap).length);
-      const [name, features] = Object.entries(routesHashmap)[random];
-      setAnswer(name);
+      const [answer, features] = Object.entries(routesHashmap)[random];
+      setAnswer(answer);
 
-      // Add random route to map
+      // Add answer route to map
       features.forEach(
         (feature) =>
           map.current &&
@@ -109,40 +109,17 @@ export default function Quiz() {
       </h1>
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
-      {/* Guesses */}
-      <div className={clsx(["flex", "flex-col", "gap-1", "p-2"])}>
-        {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
-          const guess = guesses.at(index);
-          return (
-            <div key={index} className={clsx(["min-h-8"])}>
-              <div
-                className={clsx([
-                  "bg-gray-200",
-                  "dark:bg-gray-800",
-                  "min-h-4",
-                  "px-2",
-                  "h-full",
-                  "w-full",
-                  "rounded",
-                  "flex",
-                  "items-center",
-                  "justify-between",
-                  "font-bold",
-                ])}
-              >
-                {guess && (
-                  <>
-                    <span>{guess}</span>
-                    <span>{guess === answer ? "✅" : "❌"}</span>
-                  </>
-                )}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      {/* Buttons */}
-      <div className={clsx(["flex", "gap-2", "overflow-scroll", "pb-2"])}>
+      {/* Options */}
+      <div
+        className={clsx([
+          "flex",
+          "flex-col",
+          "overflow-scroll",
+          "max-h-[150px]",
+          "border-t",
+          "border-gray-300",
+        ])}
+      >
         {Object.keys(routesHashmap).map((name) => {
           const disabled = guesses.includes(name) || gameOver;
           return (
@@ -153,21 +130,15 @@ export default function Quiz() {
                 "bg-transparent",
                 "py-2",
                 "px-4",
-                "rounded",
-                "border",
+                "border-b",
+                "last:border-b-0",
+                "border-gray-500",
                 disabled
-                  ? [
-                      "border-gray-300",
-                      "text-gray-300",
-                      "dark:border-gray-600",
-                      "dark:text-gray-600",
-                    ]
+                  ? ["text-gray-300", "dark:text-gray-600"]
                   : [
-                      "border-gray-700",
                       "text-gray-700",
                       "hover:bg-gray-100",
                       "hover:text-black",
-                      "dark:border-gray-300",
                       "dark:text-gray-300",
                       "dark:hover:bg-gray-800",
                       "dark:hover:text-white",
