@@ -17,9 +17,8 @@ import routes from "./muni_simple_routes.json";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-// Seeded random number generator using date as seed
-const rng = seedrandom(dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD"));
-
+// Seed for random number comes from date string
+const dateString = dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD");
 const NUMBER_OF_GUESSES = 5;
 
 export default function Quiz() {
@@ -53,6 +52,7 @@ export default function Quiz() {
       map.current.fitBounds(L.geoJSON(routes as GeoJSON).getBounds());
 
       // Pick a random route as the answer
+      const rng = seedrandom(dateString);
       const random = Math.floor(rng() * routesList.length);
       const { route, features } = routesList[random];
       setAnswer(route);
