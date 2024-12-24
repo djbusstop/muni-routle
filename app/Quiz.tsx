@@ -3,7 +3,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
 import L from "leaflet";
-import { Feature } from "geojson";
+import { GeoJSON, Feature } from "geojson";
 
 import routes from "./muni_simple_routes.json";
 import "leaflet/dist/leaflet.css";
@@ -45,9 +45,6 @@ export default function Quiz() {
     if (!map.current) {
       // Initialize map
       map.current = L.map(mapId, {
-        zoomSnap: 0.1,
-        zoom: 11.2,
-        center: { lat: 37.7573, lng: -122.443985 },
         attributionControl: false,
         dragging: false,
         keyboard: false,
@@ -57,6 +54,9 @@ export default function Quiz() {
         boxZoom: false,
         doubleClickZoom: false,
       });
+
+      // Fit bounds
+      map.current.fitBounds(L.geoJSON(routes as GeoJSON).getBounds());
 
       // Pick a random route as the answer
       const random = Math.floor(
