@@ -14,7 +14,8 @@
         "direction": "I",
         "objectid": "13796",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "1 California",
+        "route_name": "1",
+        "route_title": "California",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -138,7 +139,8 @@
         "direction": "O",
         "objectid": "13797",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "1 California",
+        "route_name": "1",
+        "route_title": "California",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -261,7 +263,8 @@
         "direction": "I",
         "objectid": "13798",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "12 Folsom/Pacific",
+        "route_name": "12",
+        "route_title": "Folsom/Pacific",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -393,7 +396,8 @@
         "direction": "O",
         "objectid": "13799",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "12 Folsom/Pacific",
+        "route_name": "12",
+        "route_title": "Folsom/Pacific",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -532,7 +536,8 @@
         "direction": "I",
         "objectid": "13800",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "14 Mission",
+        "route_name": "14",
+        "route_title": "Mission",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -706,7 +711,8 @@
         "direction": "O",
         "objectid": "13801",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "14 Mission",
+        "route_name": "14",
+        "route_title": "Mission",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -878,7 +884,8 @@
         "direction": "I",
         "objectid": "13804",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "15 Bayview Hunters Point",
+        "route_name": "15",
+        "route_title": "Bayview Hunters Point",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1059,7 +1066,8 @@
         "direction": "O",
         "objectid": "13805",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "15 Bayview Hunters Point",
+        "route_name": "15",
+        "route_title": "Bayview Hunters Point",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1262,7 +1270,8 @@
         "direction": "I",
         "objectid": "13806",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "18 46th Avenue",
+        "route_name": "18",
+        "route_title": "46th Avenue",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1436,7 +1445,8 @@
         "direction": "O",
         "objectid": "13807",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "18 46th Avenue",
+        "route_name": "18",
+        "route_title": "46th Avenue",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1613,7 +1623,8 @@
         "direction": "I",
         "objectid": "13808",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "19 Polk",
+        "route_name": "19",
+        "route_title": "46th Avenue",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1775,7 +1786,8 @@
         "direction": "O",
         "objectid": "13809",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "19 Polk",
+        "route_name": "19",
+        "route_title": "46th Avenue",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -1920,7 +1932,8 @@
         "direction": "I",
         "objectid": "13812",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "2 Sutter",
+        "route_name": "2",
+        "route_title": "Sutter",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2000,7 +2013,8 @@
         "direction": "O",
         "objectid": "13813",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "2 Sutter",
+        "route_name": "2",
+        "route_title": "Sutter",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2075,7 +2089,8 @@
         "direction": "I",
         "objectid": "13814",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "21 Hayes",
+        "route_name": "21",
+        "route_title": "Hayes",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2136,7 +2151,8 @@
         "direction": "O",
         "objectid": "13815",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "21 Hayes",
+        "route_name": "21",
+        "route_title": "Hayes",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2193,7 +2209,8 @@
         "direction": "I",
         "objectid": "13816",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "22 Fillmore",
+        "route_name": "22",
+        "route_title": "Fillmore",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2317,7 +2334,8 @@
         "direction": "O",
         "objectid": "13817",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "22 Fillmore",
+        "route_name": "22",
+        "route_title": "Fillmore",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2452,7 +2470,8 @@
         "direction": "I",
         "objectid": "13818",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "23 Monterey",
+        "route_name": "23",
+        "route_title": "Monterey",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2695,7 +2714,8 @@
         "direction": "O",
         "objectid": "13819",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "23 Monterey",
+        "route_name": "23",
+        "route_title": "Monterey",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -2909,7 +2929,8 @@
         "direction": "I",
         "objectid": "13820",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "24 Divisadero",
+        "route_name": "24",
+        "route_title": "Divisadero",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3081,7 +3102,8 @@
         "direction": "O",
         "objectid": "13821",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "24 Divisadero",
+        "route_name": "24",
+        "route_title": "Divisadero",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3245,7 +3267,8 @@
         "direction": "I",
         "objectid": "13822",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "25 Treasure Island",
+        "route_name": "25",
+        "route_title": "Treasure Island",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3413,7 +3436,8 @@
         "direction": "O",
         "objectid": "13823",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "25 Treasure Island",
+        "route_name": "25",
+        "route_title": "Treasure Island",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3543,7 +3567,8 @@
         "direction": "I",
         "objectid": "13824",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "27 Bryant",
+        "route_name": "27",
+        "route_title": "Bryant",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3658,7 +3683,8 @@
         "direction": "O",
         "objectid": "13825",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "27 Bryant",
+        "route_name": "27",
+        "route_title": "Bryant",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -3778,7 +3804,8 @@
         "direction": "I",
         "objectid": "13826",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "28 19th Avenue",
+        "route_name": "28",
+        "route_title": "19th Avenue",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -4040,7 +4067,8 @@
         "direction": "O",
         "objectid": "13827",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "28 19th Avenue",
+        "route_name": "28",
+        "route_title": "19th Avenue",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -4313,7 +4341,8 @@
         "direction": "I",
         "objectid": "13830",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "29 Sunset",
+        "route_name": "29",
+        "route_title": "Sunset",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -4612,7 +4641,8 @@
         "direction": "O",
         "objectid": "13831",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "29 Sunset",
+        "route_name": "29",
+        "route_title": "Sunset",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -4923,7 +4953,8 @@
         "direction": "I",
         "objectid": "13832",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "30 Stockton",
+        "route_name": "30",
+        "route_title": "Stockton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5050,7 +5081,8 @@
         "direction": "O",
         "objectid": "13833",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "30 Stockton",
+        "route_name": "30",
+        "route_title": "Stockton",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5161,7 +5193,8 @@
         "direction": "I",
         "objectid": "13834",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "31 Balboa",
+        "route_name": "31",
+        "route_title": "Balboa",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5306,7 +5339,8 @@
         "direction": "O",
         "objectid": "13835",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "31 Balboa",
+        "route_name": "31",
+        "route_title": "Balboa",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5458,7 +5492,8 @@
         "direction": "I",
         "objectid": "13836",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "33 Ashbury/18th Street",
+        "route_name": "33",
+        "route_title": "Ashbury/18th Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5610,7 +5645,8 @@
         "direction": "O",
         "objectid": "13837",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "33 Ashbury/18th Street",
+        "route_name": "33",
+        "route_title": "Ashbury/18th Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5767,7 +5803,8 @@
         "direction": "I",
         "objectid": "13838",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "35 Eureka",
+        "route_name": "35",
+        "route_title": "Eureka",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5878,7 +5915,8 @@
         "direction": "O",
         "objectid": "13839",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "35 Eureka",
+        "route_name": "35",
+        "route_title": "Eureka",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -5977,7 +6015,8 @@
         "direction": "I",
         "objectid": "13840",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "36 Teresita",
+        "route_name": "36",
+        "route_title": "Teresita",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -6311,7 +6350,8 @@
         "direction": "O",
         "objectid": "13841",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "36 Teresita",
+        "route_name": "36",
+        "route_title": "Teresita",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -6503,7 +6543,8 @@
         "direction": "I",
         "objectid": "13842",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "37 Corbett",
+        "route_name": "37",
+        "route_title": "Corbett",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -6708,7 +6749,8 @@
         "direction": "O",
         "objectid": "13843",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "37 Corbett",
+        "route_name": "37",
+        "route_title": "Corbett",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -6932,7 +6974,8 @@
         "direction": "I",
         "objectid": "13844",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "38 Geary",
+        "route_name": "38",
+        "route_title": "Geary",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -7074,7 +7117,8 @@
         "direction": "O",
         "objectid": "13845",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "38 Geary",
+        "route_name": "38",
+        "route_title": "Geary",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -7210,7 +7254,8 @@
         "direction": "I",
         "objectid": "13848",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "39 Coit",
+        "route_name": "39",
+        "route_title": "Coit",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -7312,7 +7357,8 @@
         "direction": "O",
         "objectid": "13849",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "39 Coit",
+        "route_name": "39",
+        "route_title": "Coit",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -7407,7 +7453,8 @@
         "direction": "I",
         "objectid": "13850",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "43 Masonic",
+        "route_name": "43",
+        "route_title": "Masonic",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -7768,7 +7815,8 @@
         "direction": "O",
         "objectid": "13851",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "43 Masonic",
+        "route_name": "43",
+        "route_title": "Masonic",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -8127,7 +8175,8 @@
         "direction": "I",
         "objectid": "13852",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "44 O'Shaughnessy",
+        "route_name": "44",
+        "route_title": "O'Shaughnessy",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -8451,7 +8500,8 @@
         "direction": "O",
         "objectid": "13853",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "44 O'Shaughnessy",
+        "route_name": "44",
+        "route_title": "O'Shaughnessy",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -8777,7 +8827,8 @@
         "direction": "I",
         "objectid": "13854",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "45 Union/Stockton",
+        "route_name": "45",
+        "route_title": "Union/Stockton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -8874,7 +8925,8 @@
         "direction": "O",
         "objectid": "13855",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "45 Union/Stockton",
+        "route_name": "45",
+        "route_title": "Union/Stockton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -8979,7 +9031,8 @@
         "direction": "I",
         "objectid": "13856",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "48 Quintara/24th Street",
+        "route_name": "48",
+        "route_title": "Quintara/24th Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9194,7 +9247,8 @@
         "direction": "O",
         "objectid": "13857",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "48 Quintara/24th Street",
+        "route_name": "48",
+        "route_title": "Quintara/24th Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9396,7 +9450,8 @@
         "direction": "I",
         "objectid": "13858",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "49 Van Ness/Mission",
+        "route_name": "49",
+        "route_title": "Van Ness/Mission",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9553,7 +9608,8 @@
         "direction": "O",
         "objectid": "13859",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "49 Van Ness/Mission",
+        "route_name": "49",
+        "route_title": "Van Ness/Mission",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9712,7 +9768,8 @@
         "direction": "I",
         "objectid": "13860",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "5 Fulton",
+        "route_name": "5",
+        "route_title": "Fulton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9844,7 +9901,8 @@
         "direction": "O",
         "objectid": "13861",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "5 Fulton",
+        "route_name": "5",
+        "route_title": "Fulton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -9977,7 +10035,8 @@
         "direction": "I",
         "objectid": "13862",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "52 Exelsior",
+        "route_name": "52",
+        "route_title": "Exelsior",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10141,7 +10200,8 @@
         "direction": "O",
         "objectid": "13863",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "52 Exelsior",
+        "route_name": "52",
+        "route_title": "Exelsior",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10293,7 +10353,8 @@
         "direction": "I",
         "objectid": "13864",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "54 Felton",
+        "route_name": "54",
+        "route_title": "Felton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10610,7 +10671,8 @@
         "direction": "O",
         "objectid": "13865",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "54 Felton",
+        "route_name": "54",
+        "route_title": "Felton",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10800,7 +10862,8 @@
         "direction": "I",
         "objectid": "13866",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "55 Dogpatch",
+        "route_name": "55",
+        "route_title": "Dogpatch",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10881,7 +10944,8 @@
         "direction": "O",
         "objectid": "13867",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "55 Dogpatch",
+        "route_name": "55",
+        "route_title": "Dogpatch",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -10945,7 +11009,8 @@
         "direction": "I",
         "objectid": "13868",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "56 Rutland",
+        "route_name": "56",
+        "route_title": "Rutland",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11045,7 +11110,8 @@
         "direction": "O",
         "objectid": "13869",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "56 Rutland",
+        "route_name": "56",
+        "route_title": "Rutland",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11156,7 +11222,8 @@
         "direction": "I",
         "objectid": "13870",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "57 Parkmerced",
+        "route_name": "57",
+        "route_title": "Parkmerced",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11293,7 +11360,8 @@
         "direction": "O",
         "objectid": "13871",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "57 Parkmerced",
+        "route_name": "57",
+        "route_title": "Parkmerced",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11449,7 +11517,8 @@
         "direction": "I",
         "objectid": "13872",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "58 Lake Merced",
+        "route_name": "58",
+        "route_title": "Lake Merced",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11628,7 +11697,8 @@
         "direction": "O",
         "objectid": "13873",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "58 Lake Merced",
+        "route_name": "58",
+        "route_title": "Lake Merced",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11826,7 +11896,8 @@
         "direction": "I",
         "objectid": "13876",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "6 Haight/Parnassus",
+        "route_name": "6",
+        "route_title": "Haight/Parnassus",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -11942,7 +12013,8 @@
         "direction": "O",
         "objectid": "13877",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "6 Haight/Parnassus",
+        "route_name": "6",
+        "route_title": "Haight/Parnassus",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12061,7 +12133,8 @@
         "direction": "I",
         "objectid": "13878",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "66 Quintara",
+        "route_name": "66",
+        "route_title": "Quintara",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12140,7 +12213,8 @@
         "direction": "O",
         "objectid": "13879",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "66 Quintara",
+        "route_name": "66",
+        "route_title": "Quintara",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12223,7 +12297,8 @@
         "direction": "I",
         "objectid": "13880",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "67 Bernal Heights",
+        "route_name": "67",
+        "route_title": "Bernal Heights",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12302,7 +12377,8 @@
         "direction": "O",
         "objectid": "13881",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "67 Bernal Heights",
+        "route_name": "67",
+        "route_title": "Bernal Heights",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12410,7 +12486,8 @@
         "direction": "I",
         "objectid": "13882",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "7 Haight/Noriega",
+        "route_name": "7",
+        "route_title": "Haight/Noriega",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12559,7 +12636,8 @@
         "direction": "O",
         "objectid": "13883",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "7 Haight/Noriega",
+        "route_name": "7",
+        "route_title": "Haight/Noriega",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12709,7 +12787,8 @@
         "direction": "I",
         "objectid": "13886",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "8 Bayshore",
+        "route_name": "8",
+        "route_title": "Bayshore",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -12992,7 +13071,8 @@
         "direction": "O",
         "objectid": "13887",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "8 Bayshore",
+        "route_name": "8",
+        "route_title": "Bayshore",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -13272,7 +13352,8 @@
         "direction": "I",
         "objectid": "13892",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "9 San Bruno",
+        "route_name": "9",
+        "route_title": "San Bruno",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -13446,7 +13527,8 @@
         "direction": "O",
         "objectid": "13893",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "9 San Bruno",
+        "route_name": "9",
+        "route_title": "San Bruno",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -13628,7 +13710,8 @@
         "direction": "I",
         "objectid": "13898",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "F Market & Wharves",
+        "route_name": "F",
+        "route_title": "Market & Wharves",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -13727,7 +13810,8 @@
         "direction": "O",
         "objectid": "13899",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "F Market & Wharves",
+        "route_name": "F",
+        "route_title": "Market & Wharves",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -13825,7 +13909,8 @@
         "direction": "I",
         "objectid": "13902",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "J Church",
+        "route_name": "J",
+        "route_title": "Church",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -14083,7 +14168,8 @@
         "direction": "O",
         "objectid": "13903",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "J Church",
+        "route_name": "J",
+        "route_title": "Church",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -14343,7 +14429,8 @@
         "direction": "I",
         "objectid": "13904",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "K Ingleside",
+        "route_name": "K",
+        "route_title": "Ingleside",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -14630,7 +14717,8 @@
         "direction": "O",
         "objectid": "13905",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "K Ingleside",
+        "route_name": "K",
+        "route_title": "Ingleside",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -14911,7 +14999,8 @@
         "direction": "I",
         "objectid": "13908",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "L Tarval",
+        "route_name": "L",
+        "route_title": "Tarval",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -15198,7 +15287,8 @@
         "direction": "O",
         "objectid": "13909",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "L Tarval",
+        "route_name": "L",
+        "route_title": "Tarval",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -15483,7 +15573,8 @@
         "direction": "I",
         "objectid": "13912",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "M Ocean View",
+        "route_name": "M",
+        "route_title": "Ocean View",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -15787,7 +15878,8 @@
         "direction": "O",
         "objectid": "13913",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "M Ocean View",
+        "route_name": "M",
+        "route_title": "Ocean View",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -16084,7 +16176,8 @@
         "direction": "I",
         "objectid": "13914",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "N Judah",
+        "route_name": "N",
+        "route_title": "Judah",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -16348,7 +16441,8 @@
         "direction": "O",
         "objectid": "13915",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "N Judah",
+        "route_name": "N",
+        "route_title": "Judah",
         "pattern_version": "1",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -16613,7 +16707,8 @@
         "direction": "I",
         "objectid": "13922",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "T Third Street",
+        "route_name": "T",
+        "route_title": "Third Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },
@@ -16767,7 +16862,8 @@
         "direction": "O",
         "objectid": "13923",
         "data_loaded_at": "2024-11-04T09:42:45.688",
-        "route_name": "T Third Street",
+        "route_name": "T",
+        "route_title": "Third Street",
         "pattern_version": "0",
         "data_as_of": "2024-11-02T20:47:18.000"
       },

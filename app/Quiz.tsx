@@ -14,7 +14,7 @@ import "leaflet/dist/leaflet.css";
 import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
 import worm from "./worm.svg";
-import routesHashmap from "./routesHashmap";
+import routesList, { routesHashmap } from "./routesList";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -55,9 +55,9 @@ export default function Quiz() {
       map.current.fitBounds(L.geoJSON(routes as GeoJSON).getBounds());
 
       // Pick a random route as the answer
-      const random = Math.floor(rng() * Object.keys(routesHashmap).length);
-      const [answer, features] = Object.entries(routesHashmap)[random];
-      setAnswer(answer);
+      const random = Math.floor(rng() * routesList.length);
+      const { name, features } = routesList[random];
+      setAnswer(name);
 
       // Add answer route to map
       features.forEach(
@@ -121,8 +121,8 @@ export default function Quiz() {
           "dark:border-gray-300",
         ])}
       >
-        {Object.keys(routesHashmap).map((name) => {
-          const disabled = guesses.includes(name) || gameOver;
+        {routesList.map(({ route, name }) => {
+          const disabled = guesses.includes(route) || gameOver;
           return (
             <button
               disabled={disabled}
@@ -145,16 +145,16 @@ export default function Quiz() {
                       "dark:active:text-white",
                     ],
               ])}
-              key={name}
+              key={route}
               onClick={() => {
-                addGuess(name);
+                addGuess(route);
                 if (guesses.length + 1 === NUMBER_OF_GUESSES) {
                   alert(`Correct answer was ${answer}`);
                   return;
                 }
               }}
             >
-              {name}
+              {route} {name}
             </button>
           );
         })}
