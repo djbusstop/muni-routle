@@ -62,7 +62,7 @@ export default function Quiz() {
         (feature) =>
           map.current &&
           L.geoJSON(feature, {
-            style: { color: "#bf2b45" },
+            style: { color: "#005695" },
             interactive: false,
           }).addTo(map.current)
       );
@@ -79,7 +79,7 @@ export default function Quiz() {
           (feature) =>
             map.current &&
             L.geoJSON(feature, {
-              style: { color: "#005695" },
+              style: { color: "#bf2b45" },
               interactive: false,
             })
               .addTo(map.current)
@@ -98,21 +98,35 @@ export default function Quiz() {
       >
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
+          const isWrong = guess && guess !== answer;
+          const isRight = guess && guess === answer;
           return (
             <div
               className={clsx([
                 "rounded",
-                "bg-gray-300",
-                "dark:bg-gray-800",
                 "min-h-8",
                 "min-w-8",
                 "flex",
                 "items-center",
                 "justify-center",
+                "font-bold",
+                !guess && ["bg-gray-300", "dark:bg-gray-800"],
+                isWrong && [
+                  "bg-red-100",
+                  "dark:bg-red-900",
+                  "text-red-900",
+                  "dark:text-red-100",
+                ],
+                isRight && [
+                  "bg-green-200",
+                  "dark:bg-green-900",
+                  "text-green-900",
+                  "dark:text-green-100",
+                ],
               ])}
               key={index}
             >
-              {guess && <>{guess === answer ? "✅" : "❌"}</>}
+              {guess}
             </div>
           );
         })}
@@ -145,7 +159,7 @@ export default function Quiz() {
                 "border-gray-400",
                 "dark:border-gray-500",
                 disabled
-                  ? ["text-gray-300", "dark:text-gray-600"]
+                  ? ["text-gray-400", "dark:text-gray-500"]
                   : [
                       "text-gray-700",
                       "active:bg-gray-100",
