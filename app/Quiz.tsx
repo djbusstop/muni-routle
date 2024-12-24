@@ -127,7 +127,7 @@ export default function Quiz() {
           );
         })}
       </div>
-      <div className={clsx(["flex", "gap-2", "overflow-scroll"])}>
+      <div className={clsx(["flex", "gap-2", "overflow-scroll", "pb-2"])}>
         {Object.entries(routesHashmap).map(([name, features]) => {
           const disabled = guesses.includes(name) || gameOver;
           return (
