@@ -6,6 +6,7 @@ import clsx from "clsx";
 import L from "leaflet";
 import { GeoJSON, Feature } from "geojson";
 
+import useGuesses from "./useGuesses";
 import routes from "./muni_simple_routes.json";
 import "leaflet/dist/leaflet.css";
 import worm from "./worm.svg";
@@ -15,9 +16,11 @@ const NUMBER_OF_GUESSES = 5;
 export default function Quiz() {
   const mapId = useId();
   const map = useRef<L.Map>(null);
+  const { guesses, addGuess } = useGuesses();
+
+  console.log(guesses);
 
   const [answer, setAnswer] = useState<string>();
-  const [guesses, setGuesses] = useState<string[]>([]);
   const gameOver = Boolean(
     // Ran out of guesses
     guesses.length === NUMBER_OF_GUESSES ||
@@ -79,8 +82,26 @@ export default function Quiz() {
     }
   }, []);
 
+  useEffect(() => {
+    // Add guesses to map
+    guesses.forEach((guess) => {
+      const features = routesHashmap[guess];
+      features.forEach(
+        (feature) =>
+          map.current &&
+          L.geoJSON(feature, {
+            style: { color: "#005695" },
+            interactive: false,
+          })
+            .addTo(map.current)
+            .bringToBack()
+      );
+    });
+  }, [routesHashmap, guesses]);
+
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
+      {/* Menu Bar */}
       <h1
         className={clsx([
           "flex",
@@ -97,7 +118,9 @@ export default function Quiz() {
         <Image priority alt="Muni" src={worm} width={60} />
         ROUTLE
       </h1>
+      {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
+      {/* Guesses */}
       <div className={clsx(["flex", "flex-col", "gap-1", "p-2"])}>
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
@@ -129,8 +152,9 @@ export default function Quiz() {
           );
         })}
       </div>
+      {/* Buttons */}
       <div className={clsx(["flex", "gap-2", "overflow-scroll", "pb-2"])}>
-        {Object.entries(routesHashmap).map(([name, features]) => {
+        {Object.keys(routesHashmap).map((name) => {
           const disabled = guesses.includes(name) || gameOver;
           return (
             <button
@@ -162,29 +186,11 @@ export default function Quiz() {
               ])}
               key={name}
               onClick={() => {
-                setGuesses([...guesses, name]);
-
-                if (name === answer) {
-                  alert("wow correct");
-                  return;
-                }
-
-                if (guesses.length === NUMBER_OF_GUESSES - 1) {
+                addGuess(name);
+                if (guesses.length + 1 === NUMBER_OF_GUESSES) {
                   alert(`Correct answer was ${answer}`);
                   return;
                 }
-
-                // Add guess to map
-                features.forEach(
-                  (feature) =>
-                    map.current &&
-                    L.geoJSON(feature, {
-                      style: { color: "#005695" },
-                      interactive: false,
-                    })
-                      .addTo(map.current)
-                      .bringToBack()
-                );
               }}
             >
               {name}
