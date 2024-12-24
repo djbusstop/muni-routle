@@ -187,8 +187,7 @@ export default function Quiz() {
                 }
               }}
             >
-              {route} {name}{" "}
-              {guesses.includes(route) && <>{route === answer ? "✅" : "❌"}</>}
+              {route} {name}
             </button>
           );
         })}
