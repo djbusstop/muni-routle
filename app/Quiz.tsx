@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
-import Image from "next/image";
 import clsx from "clsx";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -14,7 +13,6 @@ import "leaflet/dist/leaflet.css";
 import routesList, { routesHashmap } from "./routesList";
 import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
-import worm from "./worm.svg";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -91,24 +89,7 @@ export default function Quiz() {
   }, [guesses]);
 
   return (
-    <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
-      {/* Menu Bar */}
-      <h1
-        className={clsx([
-          "flex",
-          "justify-center",
-          "max-h-10",
-          "p-2",
-          "items-center",
-          "font-bold",
-          "gap-1",
-          "bg-gray-200",
-          "dark:bg-gray-800",
-        ])}
-      >
-        <Image priority alt="Muni" src={worm} width={60} />
-        ROUTLE
-      </h1>
+    <>
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       {/* Guesses */}
@@ -161,7 +142,8 @@ export default function Quiz() {
                 "px-4",
                 "border-b",
                 "last:border-b-0",
-                "border-gray-500",
+                "border-gray-400",
+                "dark:border-gray-500",
                 disabled
                   ? ["text-gray-300", "dark:text-gray-600"]
                   : [
@@ -197,6 +179,6 @@ export default function Quiz() {
           );
         })}
       </div>
-    </main>
+    </>
   );
 }
