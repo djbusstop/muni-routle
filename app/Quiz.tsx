@@ -3,13 +3,14 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
+import { GeoJSON } from "geojson";
 import L from "leaflet";
-import { GeoJSON, Feature } from "geojson";
+import "leaflet/dist/leaflet.css";
 
 import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
-import "leaflet/dist/leaflet.css";
 import worm from "./worm.svg";
+import routesHashmap from "./routesHashmap";
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -24,24 +25,6 @@ export default function Quiz() {
     guesses.length === NUMBER_OF_GUESSES ||
       // Solved the quiz
       (answer && guesses.includes(answer))
-  );
-
-  const routesHashmap = routes.features.reduce(
-    (acc: Record<string, Feature[]>, feature) => {
-      const routeName = feature.properties.route_name;
-      if (routeName in acc) {
-        return {
-          ...acc,
-          [routeName]: [...acc[routeName], feature as Feature],
-        };
-      } else {
-        return {
-          ...acc,
-          [routeName]: [feature as Feature],
-        };
-      }
-    },
-    {}
   );
 
   useEffect(() => {
@@ -95,7 +78,7 @@ export default function Quiz() {
             .bringToBack()
       );
     });
-  }, [routesHashmap, guesses]);
+  }, [guesses]);
 
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
