@@ -8,7 +8,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Muni Routle",
-  description: "Test your knowledge of Muni lines",
+  description: "Test your knowledge of SF Muni routes",
 };
 
 export default function RootLayout({
