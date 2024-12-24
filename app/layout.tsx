@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
@@ -19,18 +18,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <meta
-          name="theme-color"
-          content="#e5e7eb"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          name="theme-color"
-          content="#1f2937"
-          media="(prefers-color-scheme: dark)"
-        />
-      </Head>
       <body>
         <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
           {/* Menu Bar */}
