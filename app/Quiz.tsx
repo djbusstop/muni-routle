@@ -115,9 +115,10 @@ export default function Quiz() {
           "flex",
           "flex-col",
           "overflow-scroll",
-          "max-h-[150px]",
+          "max-h-[200px]",
           "border-t",
-          "border-gray-300",
+          "border-gray-700",
+          "dark:border-gray-300",
         ])}
       >
         {Object.keys(routesHashmap).map((name) => {
