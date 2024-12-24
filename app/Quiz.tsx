@@ -99,12 +99,12 @@ export default function Quiz() {
       <div className={clsx(["flex", "flex-col", "gap-1", "p-2"])}>
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
-          console.log(guess);
           return (
             <div key={index} className={clsx(["min-h-8"])}>
               <div
                 className={clsx([
-                  "bg-gray-800",
+                  "bg-gray-200",
+                  "dark:bg-gray-800",
                   "min-h-4",
                   "px-2",
                   "h-full",
@@ -141,12 +141,21 @@ export default function Quiz() {
                 "rounded",
                 "border",
                 disabled
-                  ? ["border-gray-600", "text-gray-600"]
-                  : [
-                      "hover:bg-gray-800",
-                      "text-gray-300",
-                      "hover:text-white",
+                  ? [
                       "border-gray-300",
+                      "text-gray-300",
+                      "dark:border-gray-600",
+                      "dark:text-gray-600",
+                    ]
+                  : [
+                      "border-gray-700",
+                      "text-gray-700",
+                      "hover:bg-gray-100",
+                      "hover:text-black",
+                      "dark:border-gray-300",
+                      "dark:text-gray-300",
+                      "dark:hover:bg-gray-800",
+                      "dark:hover:text-white",
                     ],
               ])}
               key={name}
