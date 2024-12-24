@@ -44,7 +44,7 @@ type LocalStorageGuesses = { created: number; guesses: string[] };
 
 const GUESSES_KEY = "mr-guesses";
 
-const useGuesses = () => {
+const useLocalGuesses = () => {
   const [localGuesses, setLocalGuesses] = useLocalStorage<LocalStorageGuesses>(
     GUESSES_KEY,
     {
@@ -77,4 +77,4 @@ const useGuesses = () => {
   return { guesses, addGuess };
 };
 
-export default useGuesses;
+export default useLocalGuesses;

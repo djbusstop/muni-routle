@@ -6,7 +6,7 @@ import clsx from "clsx";
 import L from "leaflet";
 import { GeoJSON, Feature } from "geojson";
 
-import useGuesses from "./useGuesses";
+import useLocalGuesses from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
 import "leaflet/dist/leaflet.css";
 import worm from "./worm.svg";
@@ -16,7 +16,7 @@ const NUMBER_OF_GUESSES = 5;
 export default function Quiz() {
   const mapId = useId();
   const map = useRef<L.Map>(null);
-  const { guesses, addGuess } = useGuesses();
+  const { guesses, addGuess } = useLocalGuesses();
 
   const [answer, setAnswer] = useState<string>();
   const gameOver = Boolean(
