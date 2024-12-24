@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import Image from "next/image";
 import clsx from "clsx";
 import L from "leaflet";
 import { GeoJSON, Feature } from "geojson";
 
 import routes from "./muni_simple_routes.json";
 import "leaflet/dist/leaflet.css";
+import worm from "./worm.svg";
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -76,7 +78,20 @@ export default function Quiz() {
 
   return (
     <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
-      <h1 className={clsx("text-center")}>ROUTLE</h1>
+      <h1
+        className={clsx([
+          "flex",
+          "justify-center",
+          "max-h-10",
+          "p-2",
+          "items-center",
+          "font-bold",
+          "gap-1",
+        ])}
+      >
+        <Image priority alt="Muni" src={worm} width={60} />
+        ROUTLE
+      </h1>
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       <div className={clsx(["flex", "flex-col", "gap-1", "p-2"])}>
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
