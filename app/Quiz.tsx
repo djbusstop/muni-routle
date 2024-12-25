@@ -183,7 +183,11 @@ export default function Quiz() {
                       .bringToBack()
                 );
 
-                if (guesses.length + 1 === NUMBER_OF_GUESSES) {
+                // If final guess is wrong
+                if (
+                  route !== answer &&
+                  guesses.length + 1 === NUMBER_OF_GUESSES
+                ) {
                   const answerName =
                     answer &&
                     routesHashmap[answer].at(0)?.properties?.route_title;
@@ -192,6 +196,7 @@ export default function Quiz() {
                   );
                   return;
                 }
+
                 if (route === answer) {
                   alert(`Correct! The answer is ${answer} ${name}.`);
                   return;
