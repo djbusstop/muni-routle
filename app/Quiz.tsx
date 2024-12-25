@@ -91,43 +91,52 @@ export default function Quiz() {
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       {/* Guesses */}
-      <div
-        className={clsx(["w-full", "flex", "gap-2", "justify-between", "px-6"])}
-      >
-        {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
-          const guess = guesses.at(index);
-          const isWrong = answer && guess && guess !== answer;
-          const isRight = answer && guess && guess === answer;
-          return (
-            <div
-              className={clsx([
-                "rounded",
-                "min-h-8",
-                "min-w-8",
-                "flex",
-                "items-center",
-                "justify-center",
-                "font-bold",
-                !guess && ["bg-gray-300", "dark:bg-gray-800"],
-                isWrong && [
-                  "bg-red-100",
-                  "dark:bg-red-900",
-                  "text-red-900",
-                  "dark:text-red-100",
-                ],
-                isRight && [
-                  "bg-green-200",
-                  "dark:bg-green-900",
-                  "text-green-900",
-                  "dark:text-green-100",
-                ],
-              ])}
-              key={index}
-            >
-              {guess}
-            </div>
-          );
-        })}
+      <div className={clsx(["w-full", "flex", "justify-center", "px-6"])}>
+        <div
+          className={clsx([
+            "flex",
+            "justify-between",
+            "gap-2",
+            "w-full",
+            "max-w-xs",
+          ])}
+        >
+          {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
+            const guess = guesses.at(index);
+            const isWrong = answer && guess && guess !== answer;
+            const isRight = answer && guess && guess === answer;
+            return (
+              <div
+                className={clsx([
+                  "rounded",
+                  "min-h-9",
+                  "min-w-9",
+                  "flex",
+                  "items-center",
+                  "text-lg",
+                  "justify-center",
+                  "font-bold",
+                  !guess && ["bg-gray-300", "dark:bg-gray-800"],
+                  isWrong && [
+                    "bg-red-100",
+                    "dark:bg-red-900",
+                    "text-red-900",
+                    "dark:text-red-100",
+                  ],
+                  isRight && [
+                    "bg-green-200",
+                    "dark:bg-green-900",
+                    "text-green-900",
+                    "dark:text-green-100",
+                  ],
+                ])}
+                key={index}
+              >
+                {guess}
+              </div>
+            );
+          })}
+        </div>
       </div>
       {/* Options */}
       <div
@@ -136,7 +145,7 @@ export default function Quiz() {
           "flex",
           "flex-col",
           "overflow-scroll",
-          "max-h-[180px]",
+          "max-h-[190px]",
           "border-t",
           "border-gray-700",
           "dark:border-gray-300",
