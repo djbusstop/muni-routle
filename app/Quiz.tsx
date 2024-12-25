@@ -96,8 +96,8 @@ export default function Quiz() {
       >
         {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
           const guess = guesses.at(index);
-          const isWrong = guess && guess !== answer;
-          const isRight = guess && guess === answer;
+          const isWrong = answer && guess && guess !== answer;
+          const isRight = answer && guess && guess === answer;
           return (
             <div
               className={clsx([
