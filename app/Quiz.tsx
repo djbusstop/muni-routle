@@ -109,8 +109,8 @@ export default function Quiz() {
               <div
                 className={clsx([
                   "rounded",
-                  "min-h-8",
-                  "min-w-8",
+                  "min-h-9",
+                  "min-w-9",
                   "flex",
                   "items-center",
                   "text-lg",
@@ -145,7 +145,7 @@ export default function Quiz() {
           "flex",
           "flex-col",
           "overflow-scroll",
-          "max-h-[185px]",
+          "max-h-[180px]",
           "border-t",
           "border-gray-700",
           "dark:border-gray-300",
