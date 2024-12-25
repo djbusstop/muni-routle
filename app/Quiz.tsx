@@ -153,6 +153,7 @@ export default function Quiz() {
       >
         {routesList.map(({ route, name }) => {
           const disabled = guesses.includes(route) || gameOver;
+          const guessedCorrectly = guesses.includes(route) && route === answer;
           return (
             <button
               disabled={disabled}
@@ -212,7 +213,8 @@ export default function Quiz() {
                 }
               }}
             >
-              {route} {name}
+              <>{guessedCorrectly && "🎉"}</> {route} {name}{" "}
+              <>{guessedCorrectly && "🎉"}</>
             </button>
           );
         })}
