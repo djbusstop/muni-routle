@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { Analytics } from "@vercel/analytics/next";
 import clsx from "clsx";
 
 import worm from "./worm.svg";
@@ -18,6 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Analytics />
       <body>
         <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
           {/* Menu Bar */}

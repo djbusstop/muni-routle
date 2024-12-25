@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "clsx": "^2.1.1",
     "dayjs": "^1.11.13",
     "leaflet": "^1.9.4",
