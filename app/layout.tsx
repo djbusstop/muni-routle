@@ -19,7 +19,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Analytics />
       <body>
         <main className={clsx(["w-dvw", "h-dvh", "flex", "flex-col"])}>
           {/* Menu Bar */}
@@ -58,6 +57,7 @@ export default function RootLayout({
           </header>
           {children}
         </main>
+        <Analytics />
       </body>
     </html>
   );
