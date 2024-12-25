@@ -16,9 +16,9 @@ import routes from "./muni_simple_routes.json";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
-
 // Seed for random number comes from date string
 const dateString = dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD");
+
 const NUMBER_OF_GUESSES = 5;
 
 export default function Quiz() {
