@@ -145,7 +145,7 @@ export default function Quiz() {
           "flex",
           "flex-col",
           "overflow-scroll",
-          "max-h-[190px]",
+          "max-h-[185px]",
           "border-t",
           "border-gray-700",
           "dark:border-gray-300",
