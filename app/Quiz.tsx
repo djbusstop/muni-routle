@@ -66,27 +66,25 @@ export default function Quiz() {
             interactive: false,
           }).addTo(map.current)
       );
+
+      // Add saved guesses to map
+      guesses
+        .filter((guess) => guess !== answer)
+        .forEach((guess) => {
+          const features = routesHashmap[guess];
+          features.forEach(
+            (feature) =>
+              map.current &&
+              L.geoJSON(feature, {
+                style: { color: "#bf2b45" },
+                interactive: false,
+              })
+                .addTo(map.current)
+                .bringToBack()
+          );
+        });
     }
   }, []);
-
-  useEffect(() => {
-    // Add guesses to map
-    guesses
-      .filter((guess) => guess !== answer)
-      .forEach((guess) => {
-        const features = routesHashmap[guess];
-        features.forEach(
-          (feature) =>
-            map.current &&
-            L.geoJSON(feature, {
-              style: { color: "#bf2b45" },
-              interactive: false,
-            })
-              .addTo(map.current)
-              .bringToBack()
-        );
-      });
-  }, [guesses]);
 
   return (
     <>
@@ -172,6 +170,19 @@ export default function Quiz() {
               key={route}
               onClick={() => {
                 addGuess(route);
+                // Draw on map
+                const features = routesHashmap[route];
+                features.forEach(
+                  (feature) =>
+                    map.current &&
+                    L.geoJSON(feature, {
+                      style: { color: "#bf2b45" },
+                      interactive: false,
+                    })
+                      .addTo(map.current)
+                      .bringToBack()
+                );
+
                 if (guesses.length + 1 === NUMBER_OF_GUESSES) {
                   const answerName =
                     answer &&
