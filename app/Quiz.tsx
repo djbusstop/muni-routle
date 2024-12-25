@@ -109,8 +109,8 @@ export default function Quiz() {
               <div
                 className={clsx([
                   "rounded",
-                  "min-h-9",
-                  "min-w-9",
+                  "min-h-8",
+                  "min-w-8",
                   "flex",
                   "items-center",
                   "text-lg",
@@ -153,7 +153,6 @@ export default function Quiz() {
       >
         {routesList.map(({ route, name }) => {
           const disabled = guesses.includes(route) || gameOver;
-          const guessedCorrectly = guesses.includes(route) && route === answer;
           return (
             <button
               disabled={disabled}
@@ -213,8 +212,7 @@ export default function Quiz() {
                 }
               }}
             >
-              <>{guessedCorrectly && "🎉"}</> {route} {name}{" "}
-              <>{guessedCorrectly && "🎉"}</>
+              {route} {name}
             </button>
           );
         })}
