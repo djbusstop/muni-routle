@@ -173,8 +173,8 @@ export default function Quiz() {
                 "border-gray-400",
                 "dark:border-gray-500",
                 // If user has guessed this option or the game is over
-                answerState === "correct" && ["bg-green-500", "bg-opacity-15"],
-                answerState === "incorrect" && ["bg-red-500", "bg-opacity-15"],
+                answerState === "correct" && ["bg-green-500/15"],
+                answerState === "incorrect" && ["bg-red-500/15"],
                 (Boolean(answerState) || gameOver) && [
                   "text-gray-500",
                   "dark:text-gray-500",
