@@ -3,8 +3,15 @@
 import { useState } from "react";
 import dayjs from "dayjs";
 import isToday from "dayjs/plugin/isToday";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.extend(isToday);
+
+export const localDate = (date?: dayjs.ConfigType) =>
+  dayjs(date).tz("America/Los_Angeles");
 
 export function useLocalStorage<T>(
   key: string,
@@ -53,14 +60,16 @@ const useLocalGuesses = () => {
     }
   );
 
+  console.log(localDate(localGuesses.created));
+
   // Only return guesses if guesses are from today
-  const guesses = dayjs(localGuesses.created).isToday()
+  const guesses = localDate(localGuesses.created).isToday()
     ? localGuesses.guesses
     : [];
 
   const addGuess = (guess: string) => {
     // If date is today, add guess to guesses
-    if (dayjs(localGuesses.created).isToday()) {
+    if (localDate(localGuesses.created).isToday()) {
       setLocalGuesses({
         ...localGuesses,
         guesses: [...localGuesses.guesses, guess],

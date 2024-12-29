@@ -2,22 +2,17 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
 import seedrandom from "seedrandom";
 import { GeoJSON } from "geojson";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import routesList, { routesHashmap } from "./routesList";
-import useLocalGuesses from "./useLocalGuesses";
+import useLocalGuesses, { localDate } from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
 // Seed for random number comes from date string
-const dateString = dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD");
+const dateString = localDate().format("YYYY-MM-DD");
 
 const NUMBER_OF_GUESSES = 5;
 
