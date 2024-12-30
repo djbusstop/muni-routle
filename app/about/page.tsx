@@ -40,7 +40,11 @@ export default function About() {
             Github
           </Link>
           . Please raise an issue if you see a bug, have a feature request, or
-          would like to contribute.
+          would like to contribute. If you want to get in touch with its
+          creator, you can{" "}
+          <Link className="underline" href="mailto:river@grrlz.net">
+            email her here.
+          </Link>
         </p>
       </div>
     </section>
