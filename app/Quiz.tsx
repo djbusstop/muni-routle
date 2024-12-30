@@ -29,6 +29,23 @@ export default function Quiz() {
       (answer && guesses.includes(answer))
   );
 
+  const results: Record<string, number> = {};
+  for (let i = 0; i < 365; i++) {
+    const date = localDate().add(i, "day");
+    const dateString = date.format("YYYY-MM-DD");
+    console.log(dateString);
+    const testRng = seedrandom(dateString);
+    const random = Math.floor(testRng() * routesList.length);
+    const { route } = routesList[random];
+    if (route in results) {
+      results[route] = results[route] + 1;
+    } else {
+      results[route] = 1;
+    }
+  }
+
+  console.log(results);
+
   useEffect(() => {
     if (!map.current) {
       // Initialize map
