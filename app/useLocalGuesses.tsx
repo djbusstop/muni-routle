@@ -60,8 +60,6 @@ const useLocalGuesses = () => {
     }
   );
 
-  console.log(localDate(localGuesses.created));
-
   // Only return guesses if guesses are from today
   const guesses = localDate(localGuesses.created).isToday()
     ? localGuesses.guesses
