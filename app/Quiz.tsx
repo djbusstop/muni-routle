@@ -196,7 +196,9 @@ export default function Quiz() {
                   const answerName =
                     answer &&
                     routesHashmap[answer].at(0)?.properties?.route_title;
-                  track("Fail");
+                  track("Fail", {
+                    answer: answer || "",
+                  });
                   alert(
                     `You ran out of guesses. The correct answer is ${answer} ${answerName}.`
                   );
@@ -204,7 +206,10 @@ export default function Quiz() {
                 }
 
                 if (route === answer) {
-                  track("Success");
+                  track("Success", {
+                    guesses: guesses.length,
+                    answer: answer || "",
+                  });
                   alert(`Correct! The answer is ${answer} ${name}.`);
                   return;
                 }
