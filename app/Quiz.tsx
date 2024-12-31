@@ -207,7 +207,7 @@ export default function Quiz() {
 
                 if (route === answer) {
                   track("Success", {
-                    guesses: guesses.length,
+                    guesses: guesses.length + 1,
                     answer: answer || "",
                   });
                   alert(`Correct! The answer is ${answer} ${name}.`);
