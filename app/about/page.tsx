@@ -27,7 +27,7 @@ export default function About() {
         <p>
           How to play: The blue line represents a Muni bus or train route. Your
           goal is to guess which route it is. If you guess incorrectly, the
-          route you picked will appear in red. You can use your incorrect
+          route you guessed will appear in red. You can use your incorrect
           guesses to figure out the correct route. There&apos;s only one route
           per day, so check back tomorrow once you&apos;ve finished today&apos;s
           quiz.
