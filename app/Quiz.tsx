@@ -33,11 +33,12 @@ export default function Quiz() {
   const results: Record<string, number> = {};
   for (let i = 0; i < 365; i++) {
     const date = localDate().add(i, "day");
-    const dateString = date.format("YYYY-MM-DD");
+    const dateString = date.format("DD-MM-YYYY");
     console.log(dateString);
     const testRng = seedrandom(dateString);
     const random = Math.floor(testRng() * routesList.length);
     const { route } = routesList[random];
+    console.log(route);
     if (route in results) {
       results[route] = results[route] + 1;
     } else {
