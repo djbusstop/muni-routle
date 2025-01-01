@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## License
 
-This software is protected by a Creative Commons Non-Commercial copyright license.
+This software is under a Creative Commons Non-Commercial copyright license.
