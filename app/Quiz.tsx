@@ -13,7 +13,7 @@ import routes from "./muni_simple_routes.json";
 import { track } from "@vercel/analytics";
 
 // Seed for random number comes from date string
-const dateString = localDate().format("YYYY-MM-DD");
+const dateString = localDate().format("DD-MM-YYYY");
 
 const NUMBER_OF_GUESSES = 5;
 
