@@ -10,9 +10,10 @@ import "leaflet/dist/leaflet.css";
 import routesList, { routesHashmap } from "./routesList";
 import useLocalGuesses, { localDate } from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
+import { track } from "@vercel/analytics";
 
 // Seed for random number comes from date string
-const dateString = localDate().format("YYYY-MM-DD");
+const dateString = localDate().format("DD-MM-YYYY");
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -212,6 +213,9 @@ export default function Quiz() {
                   const answerName =
                     answer &&
                     routesHashmap[answer].at(0)?.properties?.route_title;
+                  track("Fail", {
+                    answer: answer || "",
+                  });
                   alert(
                     `You ran out of guesses. The correct answer is ${answer} ${answerName}.`
                   );
@@ -219,6 +223,10 @@ export default function Quiz() {
                 }
 
                 if (route === answer) {
+                  track("Success", {
+                    guesses: guesses.length + 1,
+                    answer: answer || "",
+                  });
                   alert(`Correct! The answer is ${answer} ${name}.`);
                   return;
                 }
