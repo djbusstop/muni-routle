@@ -132,6 +132,41 @@ export default function Quiz() {
               </div>
             );
           })}
+          {
+            // Show the share button if the game is over
+            gameOver && (
+              <button
+                className={clsx([
+                  "bg-blue-200",
+                  "dark:bg-blue-900",
+                  "text-blue-900",
+                  "dark:text-blue-100",
+                  "font-bold",
+                  "py-2",
+                  "px-4",
+                  "rounded",
+                ])}
+                onClick={() => {
+                  const message = `MuniRoutle ${localDate().format(
+                    "MM/DD/YYYY"
+                  )}\n${guesses
+                    .map((guess) => (answer && guess !== answer ? "🟥" : "🟩"))
+                    .join("")}`;
+                  try {
+                    navigator.share({
+                      text: message,
+                      url: "www.muniroutle.com",
+                    });
+                  } catch {
+                    navigator.clipboard.writeText(message);
+                    alert("Copied to clipboard!");
+                  }
+                }}
+              >
+                Share
+              </button>
+            )
+          }{" "}
         </div>
       </div>
       {/* Options */}
