@@ -2,22 +2,18 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import clsx from "clsx";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
 import seedrandom from "seedrandom";
 import { GeoJSON } from "geojson";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import routesList, { routesHashmap } from "./routesList";
-import useLocalGuesses from "./useLocalGuesses";
+import useLocalGuesses, { localDate } from "./useLocalGuesses";
 import routes from "./muni_simple_routes.json";
+import { track } from "@vercel/analytics";
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
 // Seed for random number comes from date string
-const dateString = dayjs().tz("America/Los_Angeles").format("YYYY-MM-DD");
+const dateString = localDate().format("DD-MM-YYYY");
 
 const NUMBER_OF_GUESSES = 5;
 
@@ -214,6 +210,9 @@ export default function Quiz() {
                   const answerName =
                     answer &&
                     routesHashmap[answer].at(0)?.properties?.route_title;
+                  track("Fail", {
+                    answer: answer || "",
+                  });
                   alert(
                     `You ran out of guesses. The correct answer is ${answer} ${answerName}.`
                   );
@@ -221,6 +220,10 @@ export default function Quiz() {
                 }
 
                 if (route === answer) {
+                  track("Success", {
+                    guesses: guesses.length + 1,
+                    answer: answer || "",
+                  });
                   alert(`Correct! The answer is ${answer} ${name}.`);
                   return;
                 }

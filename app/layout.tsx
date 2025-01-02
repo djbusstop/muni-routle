@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Muni Routle",
-  description: "Test your knowledge of SF Muni routes",
+  description: "Test your knowledge of SF Muni routes daily.",
 };
 
 export default function RootLayout({
