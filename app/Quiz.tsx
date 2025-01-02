@@ -137,8 +137,9 @@ export default function Quiz() {
             gameOver && (
               <button
                 className={clsx([
+                  "active:bg-blue-200",
                   "bg-blue-200",
-                  "dark:bg-blue-900",
+                  "dark:bg-blue-950",
                   "text-blue-900",
                   "dark:text-blue-100",
                   "font-bold",
@@ -147,7 +148,7 @@ export default function Quiz() {
                   "rounded",
                 ])}
                 onClick={() => {
-                  const message = `MuniRoutle ${localDate().format(
+                  const message = `Muni Routle ${localDate().format(
                     "MM/DD/YYYY"
                   )}\n${guesses
                     .map((guess) => (answer && guess !== answer ? "🟥" : "🟩"))
@@ -158,7 +159,9 @@ export default function Quiz() {
                       url: "www.muniroutle.com",
                     });
                   } catch {
-                    navigator.clipboard.writeText(message);
+                    navigator.clipboard.writeText(
+                      message + "\nwww.muniroutle.com"
+                    );
                     alert("Copied to clipboard!");
                   }
                 }}
