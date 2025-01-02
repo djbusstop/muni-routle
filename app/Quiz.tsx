@@ -132,6 +132,36 @@ export default function Quiz() {
               </div>
             );
           })}
+          {
+            // Show the share button if the game is over
+            gameOver && (
+              <button
+                className={clsx([
+                  "bg-blue-200",
+                  "dark:bg-blue-900",
+                  "text-blue-900",
+                  "dark:text-blue-100",
+                  "font-bold",
+                  "py-2",
+                  "px-4",
+                  "rounded",
+                ])}
+                onClick={() => {
+                  navigator.clipboard.writeText(
+                    `MuniRoutle ${dateString}\n` +
+                      guesses
+                        .map((guess) =>
+                          answer && guess && guess !== answer ? "🟥" : "🟩",
+                        )
+                        .join(""),
+                  );
+                  alert("Copied to clipboard!");
+                }}
+              >
+                Share
+              </button>
+            )
+          }
         </div>
       </div>
       {/* Options */}
