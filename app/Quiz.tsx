@@ -137,14 +137,12 @@ export default function Quiz() {
             gameOver && (
               <button
                 className={clsx([
-                  "active:bg-blue-200",
                   "bg-blue-200",
                   "dark:bg-blue-950",
                   "text-blue-900",
                   "dark:text-blue-100",
                   "font-bold",
-                  "py-2",
-                  "px-4",
+                  "p-2",
                   "rounded",
                 ])}
                 onClick={() => {
