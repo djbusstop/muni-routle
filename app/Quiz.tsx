@@ -133,7 +133,7 @@ export default function Quiz() {
             );
           })}
           {
-            // Show the share button if the game is over
+            // Share button
             gameOver && (
               <button
                 className={clsx([
@@ -148,19 +148,18 @@ export default function Quiz() {
                 onClick={() => {
                   const message = `Muni Routle ${localDate().format(
                     "MM/DD/YYYY"
-                  )}\n${guesses
+                  )}\n
+                  ${guesses
                     .map((guess) => (answer && guess !== answer ? "🟥" : "🟩"))
-                    .join("")}`;
+                    .join("")}\n
+                  www.muniroutle.com`;
                   try {
                     navigator.share({
                       text: message,
-                      url: "www.muniroutle.com",
                     });
                   } catch {
-                    navigator.clipboard.writeText(
-                      message + "\nwww.muniroutle.com"
-                    );
-                    alert("Copied to clipboard!");
+                    navigator.clipboard.writeText(message);
+                    alert("Results copied to clipboard!");
                   }
                 }}
               >
