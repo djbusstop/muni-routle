@@ -60,21 +60,26 @@ const useLocalGuesses = () => {
     }
   );
 
+  // Check that the date the guesses were made is the same as the current date
+  const createdDate = localDate(localGuesses.created);
+  const guessesMadeToday =
+    createdDate.year() === localDate().year() &&
+    createdDate.month() === localDate().month() &&
+    createdDate.date() === localDate().date();
+
   // Only return guesses if guesses are from today
-  const guesses = localDate(localGuesses.created).isToday()
-    ? localGuesses.guesses
-    : [];
+  const guesses = guessesMadeToday ? localGuesses.guesses : [];
 
   const addGuess = (guess: string) => {
     // If date is today, add guess to guesses
-    if (localDate(localGuesses.created).isToday()) {
+    if (guessesMadeToday) {
       setLocalGuesses({
         ...localGuesses,
         guesses: [...localGuesses.guesses, guess],
       });
       return;
     }
-    // If not, wipe guesses and set new date
+    // If not, wipe guesses and set new date which is today
     setLocalGuesses({
       created: new Date().getTime(),
       guesses: [guess],
