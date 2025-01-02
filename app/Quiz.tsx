@@ -58,7 +58,7 @@ export default function Quiz() {
         (feature) =>
           map.current &&
           L.geoJSON(feature, {
-            style: { color: "#005695" },
+            style: { color: guesses.includes(route) ? "#269e3a" : "#005695" },
             interactive: false,
           }).addTo(map.current)
       );
@@ -175,23 +175,37 @@ export default function Quiz() {
               key={route}
               onClick={() => {
                 addGuess(route);
-                // Draw on map
-                const features = routesHashmap[route];
-                features.forEach(
-                  (feature) =>
-                    map.current &&
-                    L.geoJSON(feature, {
-                      style: { color: "#bf2b45" },
-                      interactive: false,
-                    })
-                      .addTo(map.current)
-                      .bringToBack()
-                );
+                const numberOfGuessesMade = guesses.length + 1;
+
+                // If user answers correctly
+                if (route === answer) {
+                  track("Success", {
+                    guesses: numberOfGuessesMade,
+                    answer: answer || "",
+                  });
+
+                  // Color line green
+                  const correctGuessFeatures = routesHashmap[route];
+                  correctGuessFeatures.forEach(
+                    (feature) =>
+                      map.current &&
+                      L.geoJSON(feature, {
+                        style: {
+                          color: "#269e3a",
+                        },
+                        interactive: false,
+                      })
+                        .addTo(map.current)
+                        .bringToFront()
+                  );
+                  alert(`Correct! The answer is ${answer} ${name}.`);
+                  return;
+                }
 
                 // If final guess is wrong
                 if (
                   route !== answer &&
-                  guesses.length + 1 === NUMBER_OF_GUESSES
+                  numberOfGuessesMade === NUMBER_OF_GUESSES
                 ) {
                   const answerName =
                     answer &&
@@ -202,17 +216,20 @@ export default function Quiz() {
                   alert(
                     `You ran out of guesses. The correct answer is ${answer} ${answerName}.`
                   );
-                  return;
                 }
 
-                if (route === answer) {
-                  track("Success", {
-                    guesses: guesses.length + 1,
-                    answer: answer || "",
-                  });
-                  alert(`Correct! The answer is ${answer} ${name}.`);
-                  return;
-                }
+                // Draw wrong guesses
+                const wrongGuessFeatures = routesHashmap[route];
+                wrongGuessFeatures.forEach(
+                  (feature) =>
+                    map.current &&
+                    L.geoJSON(feature, {
+                      style: { color: "#bf2b45" },
+                      interactive: false,
+                    })
+                      .addTo(map.current)
+                      .bringToBack()
+                );
               }}
             >
               {route} {name}
