@@ -93,8 +93,8 @@ export default function Quiz() {
           "flex",
           "flex-col",
           "gap-2",
+          "px-2",
           "items-center",
-          "px-6",
         ])}
       >
         <div
@@ -146,13 +146,7 @@ export default function Quiz() {
           // Share button
           gameOver && (
             <div
-              className={clsx([
-                "flex",
-                "justify-center",
-                "gap-2",
-                "w-full",
-                "max-w-xs",
-              ])}
+              className={clsx(["flex", "justify-center", "w-full", "max-w-xs"])}
             >
               <button
                 className={clsx([
