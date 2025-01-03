@@ -222,6 +222,7 @@ export default function Quiz() {
               key={route}
               onClick={() => {
                 addGuess(route);
+                const guessNumber = guesses.length + 1;
                 // Draw on map
                 const features = routesHashmap[route];
                 features.forEach(
@@ -236,14 +237,12 @@ export default function Quiz() {
                 );
 
                 // If final guess is wrong
-                if (
-                  route !== answer &&
-                  guesses.length + 1 === NUMBER_OF_GUESSES
-                ) {
+                if (route !== answer && guessNumber === NUMBER_OF_GUESSES) {
                   const answerName =
                     answer &&
                     routesHashmap[answer].at(0)?.properties?.route_title;
-                  track("Fail", {
+                  track("Finish", {
+                    result: "Fail",
                     answer: answer || "",
                   });
                   alert(
@@ -253,8 +252,9 @@ export default function Quiz() {
                 }
 
                 if (route === answer) {
-                  track("Success", {
-                    guesses: guesses.length + 1,
+                  track("Finish", {
+                    result: "Success",
+                    guesses: guessNumber,
                     answer: answer || "",
                   });
                   alert(`Correct! The answer is ${answer} ${name}.`);
