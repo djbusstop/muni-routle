@@ -164,18 +164,19 @@ export default function Quiz() {
                 ])}
                 onClick={() => {
                   track("Share");
-                  const message = `Muni Routle ${localDate().format(
-                    "MM/DD/YYYY"
-                  )}\n${Array(NUMBER_OF_GUESSES)
+                  const guessesEmojis = Array(NUMBER_OF_GUESSES)
                     .fill(0)
                     .map((x, index) => {
                       const guess = guesses.at(index);
-                      if (guess) {
+                      if (guess)
                         return answer && guess !== answer ? "🟥" : "🟩";
-                      }
                       return "⬛";
                     })
-                    .join(" ")}\n\nwww.muniroutle.com`;
+                    .join(" ");
+
+                  const message = `Muni Routle ${localDate().format(
+                    "MM/DD/YYYY"
+                  )}\n${guessesEmojis}\n\nwww.muniroutle.com`;
                   try {
                     navigator.share({
                       text: message,
