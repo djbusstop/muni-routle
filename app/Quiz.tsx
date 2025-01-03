@@ -87,7 +87,16 @@ export default function Quiz() {
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       {/* Guesses */}
-      <div className={clsx(["w-full", "flex", "justify-center", "px-6"])}>
+      <div
+        className={clsx([
+          "w-full",
+          "flex",
+          "flex-col",
+          "gap-2",
+          "px-2",
+          "items-center",
+        ])}
+      >
         <div
           className={clsx([
             "flex",
@@ -133,6 +142,54 @@ export default function Quiz() {
             );
           })}
         </div>
+        {
+          // Share button
+          gameOver && (
+            <div
+              className={clsx(["flex", "justify-center", "w-full", "max-w-xs"])}
+            >
+              <button
+                className={clsx([
+                  "bg-blue-200",
+                  "active:bg-blue-300",
+                  "text-blue-900",
+                  "active:text-blue-930",
+                  "dark:bg-blue-900",
+                  "active:dark:bg-blue-950",
+                  "dark:text-blue-100",
+                  "font-bold",
+                  "p-2",
+                  "rounded",
+                  "flex-grow",
+                ])}
+                onClick={() => {
+                  const message = `Muni Routle ${localDate().format(
+                    "MM/DD/YYYY"
+                  )}\n${Array(NUMBER_OF_GUESSES)
+                    .fill(0)
+                    .map((x, index) => {
+                      const guess = guesses.at(index);
+                      if (guess) {
+                        return answer && guess !== answer ? "🟥" : "🟩";
+                      }
+                      return "⬛";
+                    })
+                    .join("")}\n\nwww.muniroutle.com`;
+                  try {
+                    navigator.share({
+                      text: message,
+                    });
+                  } catch {
+                    navigator.clipboard.writeText(message);
+                    alert("Results copied to clipboard!");
+                  }
+                }}
+              >
+                Share
+              </button>
+            </div>
+          )
+        }
       </div>
       {/* Options */}
       <div
