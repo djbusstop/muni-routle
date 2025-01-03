@@ -33,18 +33,10 @@ export default function About() {
           quiz.
         </p>
         <p>
-          The code for Muni Routle is open source and it&apos;s available on{" "}
-          <Link
-            className="underline"
-            href="https://github.com/djbusstop/routle"
-          >
-            Github
-          </Link>
-          . Please raise an issue if you see a bug, have a feature request, or
-          would like to contribute. If you want to get in touch with its
-          creator, you can{" "}
+          If you see a bug, have a feature request, or would like to contribute,
+          you get in touch with Muni Routle&apos;s creator{" "}
           <Link className="underline" href="mailto:river@grrlz.net">
-            email her here.
+            by email.
           </Link>
         </p>
         <p>
