@@ -165,8 +165,15 @@ export default function Quiz() {
                 onClick={() => {
                   const message = `Muni Routle ${localDate().format(
                     "MM/DD/YYYY"
-                  )}\n\n${guesses
-                    .map((guess) => (answer && guess !== answer ? "🟥" : "🟩"))
+                  )}\n${Array(NUMBER_OF_GUESSES)
+                    .fill(0)
+                    .map((x, index) => {
+                      const guess = guesses.at(index);
+                      if (guess) {
+                        return answer && guess !== answer ? "🟥" : "🟩";
+                      }
+                      return "⬛";
+                    })
                     .join("")}\n\nwww.muniroutle.com`;
                   try {
                     navigator.share({
