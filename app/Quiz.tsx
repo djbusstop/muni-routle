@@ -163,6 +163,7 @@ export default function Quiz() {
                   "flex-grow",
                 ])}
                 onClick={() => {
+                  track("Share");
                   const message = `Muni Routle ${localDate().format(
                     "MM/DD/YYYY"
                   )}\n${Array(NUMBER_OF_GUESSES)
