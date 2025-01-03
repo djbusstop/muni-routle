@@ -175,7 +175,7 @@ export default function Quiz() {
                       }
                       return "⬛";
                     })
-                    .join("")}\n\nwww.muniroutle.com`;
+                    .join(" ")}\n\nwww.muniroutle.com`;
                   try {
                     navigator.share({
                       text: message,
