@@ -196,6 +196,13 @@ export default function Quiz() {
       >
         {routesList.map(({ route, name }) => {
           const disabled = guesses.includes(route) || gameOver;
+          const answerState =
+            guesses.includes(route) && route === answer
+              ? "correct"
+              : guesses.includes(route) && route !== answer
+              ? "incorrect"
+              : null;
+
           return (
             <button
               disabled={disabled}
@@ -208,16 +215,23 @@ export default function Quiz() {
                 "last:border-b-0",
                 "border-gray-400",
                 "dark:border-gray-500",
-                disabled
-                  ? ["text-gray-400", "dark:text-gray-500"]
-                  : [
-                      "text-gray-700",
-                      "active:bg-gray-100",
-                      "active:text-black",
-                      "dark:text-gray-300",
-                      "dark:active:bg-gray-900",
-                      "dark:active:text-white",
-                    ],
+                // If user has guessed this option or the game is over
+                answerState === "correct" && ["bg-green-500/15"],
+                answerState === "incorrect" && ["bg-red-500/15"],
+                (Boolean(answerState) || gameOver) && [
+                  "text-gray-500",
+                  "dark:text-gray-500",
+                ],
+                // If the option is clickable
+                !gameOver &&
+                  answerState === null && [
+                    "text-gray-700",
+                    "active:bg-gray-100",
+                    "active:text-black",
+                    "dark:text-gray-300",
+                    "dark:active:bg-gray-900",
+                    "dark:active:text-white",
+                  ],
               ])}
               key={route}
               onClick={() => {
