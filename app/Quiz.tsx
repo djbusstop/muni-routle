@@ -88,14 +88,7 @@ export default function Quiz() {
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       {/* Guesses */}
       <div
-        className={clsx([
-          "w-full",
-          "flex",
-          "flex-col",
-          "gap-2",
-          "px-2",
-          "items-center",
-        ])}
+        className={clsx(["w-full", "flex", "gap-2", "px-2", "justify-center"])}
       >
         <div
           className={clsx([
@@ -141,13 +134,9 @@ export default function Quiz() {
               </div>
             );
           })}
-        </div>
-        {
-          // Share button
-          gameOver && (
-            <div
-              className={clsx(["flex", "justify-center", "w-full", "max-w-xs"])}
-            >
+          {
+            // Share button
+            gameOver && (
               <button
                 className={clsx([
                   "bg-blue-200",
@@ -160,7 +149,6 @@ export default function Quiz() {
                   "font-bold",
                   "p-2",
                   "rounded",
-                  "flex-grow",
                 ])}
                 onClick={() => {
                   track("Share");
@@ -189,9 +177,9 @@ export default function Quiz() {
               >
                 Share
               </button>
-            </div>
-          )
-        }
+            )
+          }
+        </div>
       </div>
       {/* Options */}
       <div
