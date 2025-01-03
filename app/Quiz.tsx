@@ -95,6 +95,7 @@ export default function Quiz() {
             "gap-2",
             "w-full",
             "max-w-xs",
+            "flex-wrap",
           ])}
         >
           {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
@@ -144,15 +145,14 @@ export default function Quiz() {
                   "font-bold",
                   "p-2",
                   "rounded",
+                  "flex-grow",
                 ])}
                 onClick={() => {
                   const message = `Muni Routle ${localDate().format(
                     "MM/DD/YYYY"
-                  )}\n
-                  ${guesses
+                  )}\n\n${guesses
                     .map((guess) => (answer && guess !== answer ? "🟥" : "🟩"))
-                    .join("")}\n
-                  www.muniroutle.com`;
+                    .join("")}\n\nwww.muniroutle.com`;
                   try {
                     navigator.share({
                       text: message,
