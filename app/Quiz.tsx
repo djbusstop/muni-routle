@@ -87,7 +87,16 @@ export default function Quiz() {
       {/* Map */}
       <div className={clsx(["w-full", "flex-grow"])} id={mapId} />
       {/* Guesses */}
-      <div className={clsx(["w-full", "flex", "justify-center", "px-6"])}>
+      <div
+        className={clsx([
+          "w-full",
+          "flex",
+          "flex-col",
+          "gap-2",
+          "items-center",
+          "px-6",
+        ])}
+      >
         <div
           className={clsx([
             "flex",
@@ -95,7 +104,6 @@ export default function Quiz() {
             "gap-2",
             "w-full",
             "max-w-xs",
-            "flex-wrap",
           ])}
         >
           {new Array(NUMBER_OF_GUESSES).fill(0).map((value, index) => {
@@ -133,14 +141,27 @@ export default function Quiz() {
               </div>
             );
           })}
-          {
-            // Share button
-            gameOver && (
+        </div>
+        {
+          // Share button
+          gameOver && (
+            <div
+              className={clsx([
+                "flex",
+                "justify-center",
+                "gap-2",
+                "w-full",
+                "max-w-xs",
+              ])}
+            >
               <button
                 className={clsx([
                   "bg-blue-200",
-                  "dark:bg-blue-950",
+                  "active:bg-blue-300",
                   "text-blue-900",
+                  "active:text-blue-930",
+                  "dark:bg-blue-900",
+                  "active:dark:bg-blue-950",
                   "dark:text-blue-100",
                   "font-bold",
                   "p-2",
@@ -165,9 +186,9 @@ export default function Quiz() {
               >
                 Share
               </button>
-            )
-          }{" "}
-        </div>
+            </div>
+          )
+        }
       </div>
       {/* Options */}
       <div
